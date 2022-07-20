@@ -43,8 +43,8 @@ class ViewController: UIViewController {
     
     func fetchData() { //데이터 불러오기 CoreData를 이용해서 Local DB에 있는 데이터를 불러오는 것.
         //엔티티 가져오기 (TodoList) , 만약 TodoList엔티티가 안불러진다면 Xcode 재부팅
+      
         let fetchRequest: NSFetchRequest<TodoList> = TodoList.fetchRequest()
-        
         let context = appdelegate.persistentContainer.viewContext
        
         do{
@@ -106,6 +106,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.prioirtyView.layer.cornerRadius = cell.prioirtyView.bounds.height / 2
   
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+        let detailVC = TodoDetailViewController.init(nibName: "TodoDetailViewController", bundle: nil)
+        detailVC.delegate = self
+        detailVC.selectedTodoList = todoList[indexPath.row]//내가 선택한 값을 넘겨주겠다.
+        self.present(detailVC, animated: true, completion: nil)
     }
 }
     

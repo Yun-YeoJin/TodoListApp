@@ -13,6 +13,8 @@
                 <outlet property="HighButton" destination="WZb-1g-yn7" id="g4I-JO-wI2"/>
                 <outlet property="LowButton" destination="yvl-o3-4jM" id="ajY-ZB-mRI"/>
                 <outlet property="NormalButton" destination="fyQ-Qk-n6D" id="hIo-oi-VPl"/>
+                <outlet property="deleteButton" destination="U0q-OE-Zcs" id="bCc-kk-bZ7"/>
+                <outlet property="saveButton" destination="6eD-rq-RSn" id="akm-8K-Oks"/>
                 <outlet property="titleTextField" destination="QrY-OU-J1n" id="QSa-Ip-sZX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -118,6 +120,9 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="DELETE"/>
+                    <connections>
+                        <action selector="deleteTodo:" destination="-1" eventType="touchUpInside" id="tMX-Op-DrB"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
